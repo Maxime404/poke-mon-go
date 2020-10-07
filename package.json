@@ -1,20 +1,27 @@
 {
   "name": "poke-mon-go",
   "version": "1.0.0",
-  "main": "src/main.ts",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "yarn tsc",
-    "start": "ts-node src/main.ts"
+    "build": "yarn babel src/ --out-dir .dist --extensions '.ts' --quiet",
+    "start": "yarn build && node .dist/main"
   },
   "dependencies": {
-    "@types/node": "^14.11.5",
+    "@babel/polyfill": "^7.10.1",
     "chalk": "^4.1.0",
-    "dotenv": "^8.2.0",
-    "mongoose": "^5.10.8"
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.149",
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@types/mongoose": "^5.7.36",
+    "@types/node": "^14.11.5",
     "ts-node": "^8.7.0",
     "typescript": "^3.8.3"
   }

@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
-import dotenv from 'dotenv';
-import chalk from 'chalk';
+import dotenv from 'dotenv'
+import chalk from 'chalk'
 
-dotenv.config();
+dotenv.config()
 
-mongoose.connect(process.env.DB_URI, {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASE_URI, {useNewUrlParser: true});
 
 const db = mongoose.connection;
-db.on('error', () => {
-    console.log(chalk.red('Connection error'));
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log( chalk.green("we are connected !"))
 });
-db.once('open', () => {
-    console.log(chalk.green('Connected successfuly !'));
-});
+
