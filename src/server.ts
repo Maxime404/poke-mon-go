@@ -21,7 +21,7 @@ async function main() {
     const pokemonsData = mongoose.model('Pokemon');
 
     _.each(jsonPokemons, (jsonPokemon) => {
-
+      
       pokemonsData.find({ id: jsonPokemon.number }, (err, docs) => {
         if (!docs.length) {
           const pokemon = new Pokemon({
