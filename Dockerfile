@@ -1,5 +1,6 @@
 FROM node:latest
 WORKDIR /app
-COPY . .
+COPY package.json .
 RUN yarn
+COPY . .
 RUN yarn dev
