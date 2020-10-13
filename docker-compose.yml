@@ -4,7 +4,8 @@ services:
     container_name: app-node-container
     build: .
     depends_on:
-      - database
+      database:
+        condition: service_started
   database:
     image: mongo:latest
     container_name: app-mongo-container
