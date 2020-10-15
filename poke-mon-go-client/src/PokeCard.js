@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function PokeCard(props) {
     return (
-        <a href={`/${props.ndex}`}>
+        <a href={`/${props.num}`}>
             <div class="pokemon-pcard">
-                <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${props.ndex}.png`} alt={props.ndex} />
-                <p class="text-left px-3 pb-3" key={props.ndex}>
-                    <strong>#{props.ndex}</strong><br />{props.nom}
+                <img src={props.image} alt={props.num} />
+                <p class="text-left px-3 pb-3" key={props.num}>
+                    <strong>#{props.num}</strong><br />{props.name}
                 </p>
             </div>
         </a>

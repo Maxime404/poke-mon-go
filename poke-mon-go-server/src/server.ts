@@ -21,11 +21,12 @@ async function main() {
     const pokemonsData = mongoose.model('Pokemon');
 
     _.each(jsonPokemons, (jsonPokemon) => {
-      
+
       pokemonsData.find({ id: jsonPokemon.number }, (err, docs) => {
         if (!docs.length) {
           const pokemon = new Pokemon({
             id: jsonPokemon.number,
+            num: jsonPokemon.num,
             name: jsonPokemon.name,
             species: jsonPokemon.species,
             types: jsonPokemon.types,
@@ -38,15 +39,27 @@ async function main() {
             image: jsonPokemon.sprite,
             description: jsonPokemon.description,
             weaknesses: jsonPokemon.weaknesses,
-            evolution: jsonPokemon.weaknesses
+            evolution: jsonPokemon.evolution,
+            starter: jsonPokemon.starter,
+            legendary: jsonPokemon.legendary,
+            mythical: jsonPokemon.mythical,
+            ultraBeast: jsonPokemon.ultraBeast,
+            mega: jsonPokemon.mega,
+            gen: jsonPokemon.gen,
+            candy: jsonPokemon.candy,
+            candy_count: jsonPokemon.candy_count,
+            egg: jsonPokemon.egg,
+            spawn_chance: jsonPokemon.spawn_chance,
+            avg_spawns: jsonPokemon.avg_spawns,
+            spawn_time: jsonPokemon.spawn_time
           })
 
           pokemon.save((err) => {
             if (err) {
               error('sorry')
+            } else {
+              success(`pokemon ${jsonPokemon.name} saved!`)
             }
-
-            success(`pokemon ${jsonPokemon.name} saved!`)
           })
         }
       })

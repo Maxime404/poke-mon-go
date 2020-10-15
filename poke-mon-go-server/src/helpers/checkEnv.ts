@@ -1,4 +1,7 @@
+import dotenv from 'dotenv'
 import {isEmpty} from 'lodash'
+
+dotenv.config()
 
 export default function checkEnv(keys: string[]) {
 

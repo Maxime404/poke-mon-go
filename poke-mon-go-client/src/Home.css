@@ -28,6 +28,10 @@
     max-width: 130px;
   }
 
+  .image-container, .image {
+    height: calc(20vh)
+  }
+
 
 @keyframes Home-logo-spin {
   from {
