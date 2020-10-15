@@ -1,12 +1,12 @@
 import { error, info, success } from './helpers/display'
 import checkEnv from './helpers/checkEnv'
 import { connect } from './database'
-import express from 'express';
-import cors from 'cors';
+import express from 'express'
+import cors from 'cors'
 import _ from 'lodash'
 
 import Pokemon from './database/schemas/pokemon'
-import mongoose, { Schema } from 'mongoose'
+import mongoose from 'mongoose'
 import api from './routes/api'
 
 const jsonPokemons = require('../data/pokemons.json')
