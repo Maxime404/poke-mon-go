@@ -15,7 +15,7 @@ export default class Pokemons extends React.Component {
 
     async fetchListPokemonSpec() {
 
-        const response = await fetch(`http://localhost:5000/api/pokemons/${this.state.pathname}`, {
+        const response = await fetch(`http://localhost:27017/api/pokemons/${this.state.pathname}`, {
             headers: {
                 'Content-Type': 'application/json'
             }
